@@ -22,9 +22,12 @@ authRouter.post('/login',async(req,res)=>{
                 expiresIn: "1d",
             }
         );
+        
         res.cookie("auth_token",token,{
             httpOnly:true,
+            
             secure:process.env.NODE_ENV === "production",
+            sameSite: 'None', // set to 'None' if you're using cross-site cookies
             maxAge: 86400000,
         });
 
