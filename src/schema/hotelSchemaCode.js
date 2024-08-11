@@ -71,7 +71,7 @@ const hotelSchema = new mongoose.Schema({
         required: true,
     },
     facilities:{
-        type: Array,
+        type: [String],
         required: true,
     },
     adults:{
